@@ -43,6 +43,10 @@ let paths = {
 	images: {
 		src: "app/images/**/*.+(jpeg|jpg|png|svg|gif)",
 		dest: "dist/images"
+	},
+	otherFiles: {
+		src: ["app/*.ico"],
+		dest: "dist"
 	}
 };
 
@@ -138,6 +142,11 @@ function loadImages() {
 	.pipe(gulp.dest(paths.images.dest));
 }
 
+function loadOtherFiles() {
+	return gulp.src(paths.otherFiles.src)
+	.pipe(gulp.dest(paths.otherFiles.dest));
+}
+
 // Reloading html if it changes
 function reloadHTML() {
 	return gulp.src(paths.html.src)
@@ -171,6 +180,7 @@ exports.loadJS = loadJS;
 exports.loadJSLibs = loadJSLibs;
 exports.loadFonts = loadFonts;
 exports.loadImages = loadImages;
+exports.loadOtherFiles = loadOtherFiles;
 exports.reloadHTML = reloadHTML;
 exports.reloadJS = reloadJS;
 exports.watch = watch;
@@ -186,7 +196,8 @@ let loadTask = gulp.parallel(
 	loadJS,
 	loadJSLibs,
 	loadFonts,
-	loadImages
+	loadImages,
+	loadOtherFiles
 );
 gulp.task("load", loadTask);
 
