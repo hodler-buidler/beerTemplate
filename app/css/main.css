@@ -1,0 +1,343 @@
+/*** Varriables ***/
+/*** Bases ***/
+@import url(reset.css);
+.link, .btn, .scroll-below {
+  -webkit-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all; }
+
+/***Mixins***/
+/*** Fonts ***/
+@font-face {
+  src: url("../fonts/Amiri.ttf");
+  font-family: "Amiri"; }
+
+@font-face {
+  src: url("../fonts/Amiri-italic.ttf");
+  font-family: "Amiri Italic"; }
+
+@font-face {
+  src: url("../fonts/Cinzel.ttf");
+  font-family: "Cinzel"; }
+
+@font-face {
+  src: url("../fonts/Cinzel-black.ttf");
+  font-family: "Cinzel Black"; }
+
+/*** Main settings ***/
+body, html {
+  height: 100%; }
+
+body {
+  font-family: "Amiri";
+  color: #b4ba98;
+  background-color: #1a1c0f;
+  line-height: 1.2;
+  margin: 0; }
+
+a {
+  font-family: "Amiri";
+  color: #b4ba98; }
+
+p {
+  margin: 20px 0;
+  line-height: 1.5; }
+
+/* Text and link styles */
+.italic {
+  font-family: "Amiri Italic"; }
+
+.unusuall-text-color {
+  color: #cdb378; }
+
+.link {
+  font-family: "Amiri Italic";
+  color: #cdb378;
+  text-decoration: underline; }
+  .link:hover {
+    color: #fff; }
+  .link:active {
+    opacity: 0.6; }
+
+/* Headers. Headers types */
+.h1 {
+  font-size: 340%; }
+
+.h2 {
+  font-size: 300%; }
+
+.h3 {
+  font-size: 260%; }
+
+.h4 {
+  font-size: 220%; }
+
+.h5 {
+  font-size: 180%; }
+
+.h6 {
+  font-size: 140%; }
+
+.bold-header, .regular-header {
+  color: #cdb378; }
+
+.bold-header-unusuall, .regular-header-unusuall {
+  color: #fff; }
+
+.bold-header-mark, .regular-header-mark {
+  color: #1a1c0f; }
+
+.bold-header, .bold-header-unusuall, .bold-header-mark {
+  font-family: "Cinzel Black"; }
+
+.regular-header, .regular-header-unusuall, .regular-header-mark {
+  font-family: "Cinzel"; }
+
+/* Forms elements */
+.btn {
+  border: 2px solid #404429;
+  font-family: "Amiri";
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12px 50px;
+  font-size: 90%;
+  cursor: pointer;
+  display: table;
+  background: transparent;
+  outline: none; }
+  .btn:hover {
+    background: #404429; }
+  .btn:active {
+    opacity: 0.6; }
+
+.btn-dark {
+  backgroun-color: #1a1c0f; }
+
+.btn-light {
+  background-color: #232615; }
+
+/* Images */
+.full-block-img {
+  width: 100%;
+  height: 100%; }
+
+/*** Page header ***/
+.page-header {
+  background: transparent url("../images/headerBg.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2%; }
+  .page-header__main {
+    height: 80%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.logo {
+  width: 100px;
+  height: 105px;
+  background: transparent url("../images/logo.png") center center no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover; }
+
+.intro {
+  text-align: center; }
+  .intro__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .intro__header:before, .intro__header:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #cdb378; }
+  .intro__header:before {
+    margin-right: 10px; }
+  .intro__header:after {
+    margin-left: 10px; }
+  .intro__quote {
+    margin-top: 10px;
+    margin-bottom: 15px; }
+  .intro__quote-author {
+    font-size: 110%; }
+
+.scroll-below {
+  cursor: pointer;
+  color: #cdb378; }
+  .scroll-below:hover {
+    color: #fff; }
+  .scroll-below:active {
+    opacity: 0.6; }
+  .scroll-below__down-btn {
+    width: 20px;
+    height: 20px;
+    background: transparent url("../images/down.svg") center center no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+    margin: auto;
+    margin-top: 5px; }
+
+/*** Beer introduction ***/
+.beer-intro {
+  position: relative;
+  -webkit-box-shadow: inset 0px 3px 30px 1px rgba(0, 0, 0, 0.35);
+          box-shadow: inset 0px 3px 30px 1px rgba(0, 0, 0, 0.35); }
+  .beer-intro__advantage_dark-wrap, .beer-intro__advantage_light-wrap {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 8%;
+    padding-right: 2%; }
+  .beer-intro__advantage_dark-wrap {
+    width: -webkit-calc(85% - 275px);
+    width: calc(85% - 275px); }
+  .beer-intro__advantage_light-wrap {
+    width: 78%;
+    background: #232615 url("../images/bigRotatedLogo.png") center right no-repeat;
+    -webkit-background-size: auto 200%;
+            background-size: auto 200%; }
+  .beer-intro__advantage_light {
+    width: -webkit-calc(105% - 275px);
+    width: calc(105% - 275px); }
+  .beer-intro__beer-bottle {
+    position: absolute;
+    right: 15%;
+    bottom: -170px;
+    width: 265px;
+    z-index: 1; }
+  .beer-intro__joy-of-beer-img {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 25%;
+    max-width: 450px;
+    min-width: 300px; }
+
+/*** Inspiration tab ***/
+.inspiration-tab {
+  background: transparent url("../images/inspirationBg.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-attachment: fixed; }
+  .inspiration-tab__header {
+    margin-right: 10%;
+    margin-left: 2%; }
+
+/*** Beer description tab ***/
+.beer-description {
+  width: 50%; }
+  .beer-description_wrap {
+    padding: 8%;
+    position: relative; }
+  .beer-description__image {
+    position: absolute;
+    top: -8%;
+    width: 45%;
+    max-width: 550px;
+    right: 0; }
+
+/*** Start journey tab ***/
+.start-journey {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; }
+  .start-journey_wrap {
+    padding: 5% 2%; }
+
+/*** Footer ***/
+.page-foter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .page-foter__img-decoration {
+    width: 100%; }

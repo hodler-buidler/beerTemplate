@@ -1,0 +1,43 @@
+/*** Varriables ***/
+
+// Fonts
+$textFont: "Amiri"
+$italicFont: "Amiri Italic"
+$thinHeaderFont: "Cinzel"
+$thickHeaderFont: "Cinzel Black"
+
+// Colors
+$bgColorDark: #1a1c0f
+$bgColorLight: #232615
+$bgColorSuperLight: #cdb378
+
+$textColor: #b4ba98
+$unusuallTextColor: #cdb378
+$quoteTextColor: #fff
+
+$headerColor: #cdb378
+$unusuallHeaderColor: #fff
+$markHeaderColor: #1a1c0f
+
+/*** Bases ***/
+
+%fastTransition
+	transition: 0.2s all
+
+%mediumTransition
+	transition: 0.4s all
+
+%slowTransition
+	transition: 0.6s all
+
+/***Mixins***/
+
+@mixin setCoverBg($path, $bgColor)
+	background: $bgColor url("../images/#{$path}") center center no-repeat
+	background-size: cover
+
+@mixin flex($direction, $justifyContent, $alignItems)
+	display: flex
+	flex-direction: $direction
+	justify-content: $justifyContent
+	align-items: $alignItems

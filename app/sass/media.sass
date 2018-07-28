@@ -1,0 +1,168 @@
+@import common
+
+// Media queries
+// WIDTH
+
+// Big screens
+@media screen and (min-width: 1400px)
+
+	// Main settings
+	body
+		font-size: 120%
+
+	// Beer introduction
+	.beer-intro
+		&__advantage_dark-wrap
+			width: calc(85% - 340px)
+
+		&__advantage_light
+			width: calc(105% - 340px)
+
+@media screen and (min-width: 1800px)
+
+	// Main settings
+	body
+		font-size: 145%
+
+	// Beer introduction
+	.beer-intro
+		&__advantage_dark-wrap
+			width: calc(85% - 370px)
+
+		&__advantage_light
+			width: calc(105% - 370px)
+
+	// Beer description tab
+	.beer-description
+		width: auto
+		@include flex(row, center, center)
+
+		&_wrap
+			padding: 8%
+
+		&__image
+			position: static
+			margin-left: 40px
+
+// Medium screens - tablets
+@media screen and (max-width: 900px)
+
+	// Beer introduction
+	.beer-intro
+		&__advantage_dark-wrap, &__advantage_light-wrap
+			padding: 5%
+
+		&__advantage_dark-wrap, &__advantage_light
+			width: auto
+
+		&__advantage_light-wrap
+			background-size: auto 150%
+
+		&__beer-bottle, &__joy-of-beer-img
+			display: none
+
+	// Beer description tab
+	.beer-description
+		width: auto
+		
+		&_wrap
+			padding: 5%
+			border-bottom: 1px solid #404429
+
+		&__image
+			display: none
+
+@media screen and (max-width: 736px)
+
+	// Main settings
+	body
+		font-size: 90%
+
+	// Headers. Headers types
+
+	//Sizes
+	.h1
+		font-size: 310%
+	.h2
+		font-size: 270%
+	.h3
+		font-size: 230%
+	.h4
+		font-size: 190%
+	.h5
+		font-size: 150%
+	.h6
+		font-size: 110%
+
+// Small screens - mobile phones
+@media screen and (max-width: 667px)
+
+	// Beer introduction
+	.beer-intro
+		&__advantage_light-wrap
+			width: auto
+			background-size: auto 130%
+
+@media screen and (max-width: 557px)
+
+	// Main settings
+	body
+		font-size: 80%
+
+	// Inspiration tab
+	.inspiration-tab
+		@include flex(row, center, center)
+		text-align: center
+
+		&__header
+			margin:
+				right: 2%
+				left: 2%
+
+// Super small screens - mobile phones
+@media screen and (max-width: 414px)
+
+	// Main settings
+	body
+		font-size: 70%
+	p
+		margin: 15px 0
+
+	// Forms elements
+	.btn
+		padding: 10px 50px
+
+	// Beer introduction
+	.beer-intro
+		&__advantage_dark-wrap, &__advantage_light-wrap
+				padding: 5% 2%
+
+		&__advantage_light-wrap
+			background-size: auto 120%
+
+	// Beer description tab
+	.beer-description
+		&_wrap
+			padding: 5% 2%
+
+// HEIGHT
+
+@media screen and (max-height: 470px)
+
+	//Page header
+	.page-header
+		&__main
+			height: 90%
+
+	.logo
+		width: 85px
+		height: 90px
+
+@media screen and (max-height: 400px)
+
+	//Page header
+	.intro
+		&__quote
+			margin:
+				top: 7px
+				bottom: 11px

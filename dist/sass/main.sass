@@ -1,0 +1,262 @@
+@import common
+@import reset.css
+
+/*** Fonts ***/
+
+@font-face
+	src: url("../fonts/Amiri.ttf")
+	font-family: "Amiri"
+
+@font-face
+	src: url("../fonts/Amiri-italic.ttf")
+	font-family: "Amiri Italic"
+
+@font-face
+	src: url("../fonts/Cinzel.ttf")
+	font-family: "Cinzel"
+
+@font-face
+	src: url("../fonts/Cinzel-black.ttf")
+	font-family: "Cinzel Black"
+
+/*** Main settings ***/
+
+body, html
+	height: 100%
+
+body
+	font-family: $textFont
+	color: $textColor
+	background-color: $bgColorDark
+	line-height: 1.2
+	margin: 0
+
+a
+	font-family: $textFont
+	color: $textColor
+
+p
+	margin: 20px 0
+	line-height: 1.5
+
+/* Text and link styles */
+.italic
+	font-family: $italicFont
+
+.unusuall-text-color
+	color: $unusuallTextColor
+
+.link
+	font-family: $italicFont
+	color: $unusuallTextColor
+	text-decoration: underline
+	@extend %mediumTransition
+	
+	&:hover
+		color: $quoteTextColor
+
+	&:active
+		opacity: 0.6
+
+/* Headers. Headers types */
+
+//Sizes
+.h1
+	font-size: 340%
+.h2
+	font-size: 300%
+.h3
+	font-size: 260%
+.h4
+	font-size: 220%
+.h5
+	font-size: 180%
+.h6
+	font-size: 140%
+
+// Color and font
+.bold-header, .regular-header
+	color: $headerColor
+.bold-header-unusuall, .regular-header-unusuall
+	color: $unusuallHeaderColor
+.bold-header-mark, .regular-header-mark
+	color: $markHeaderColor
+
+.bold-header, .bold-header-unusuall, .bold-header-mark
+	font-family: $thickHeaderFont
+.regular-header, .regular-header-unusuall, .regular-header-mark
+	font-family: $thinHeaderFont
+
+/* Forms elements */
+
+.btn
+	border: 2px solid #404429
+	font-family: $textFont
+	text-transform: uppercase
+	color: $quoteTextColor
+	padding: 12px 50px
+	font-size: 90%
+	@extend %mediumTransition
+	cursor: pointer
+	display: table
+	background: transparent
+	outline: none
+
+	&:hover
+		background: #404429
+
+	&:active
+		opacity: 0.6
+
+.btn-dark
+	backgroun-color: $bgColorDark
+
+.btn-light
+	background-color: $bgColorLight
+
+/* Images */
+
+.full-block-img
+	width: 100%
+	height: 100%
+
+/*** Page header ***/
+
+.page-header
+	@include setCoverBg("headerBg.jpg", transparent)
+	@include flex(row, center, center)
+	padding: 0 2%
+
+	&__main
+		height: 80%
+		@include flex(column, space-between, center)
+
+.logo
+	width: 100px
+	height: 105px
+	@include setCoverBg("logo.png", transparent)
+
+.intro
+	text-align: center
+	
+	&__header
+		@include flex(row, center, center)
+
+	&__header:before, &__header:after
+		content: ""
+		width: 100%
+		height: 2px
+		background-color: $bgColorSuperLight
+	&__header:before
+		margin-right: 10px
+	&__header:after
+		margin-left: 10px
+
+	&__quote
+		margin:
+			top: 10px
+			bottom: 15px
+
+	&__quote-author
+		font-size: 110%
+
+.scroll-below
+	cursor: pointer
+	color: $unusuallTextColor
+	@extend %mediumTransition
+
+	&:hover
+		color: $quoteTextColor
+	&:active
+		opacity: 0.6
+
+	&__down-btn
+		width: 20px
+		height: 20px
+		@include setCoverBg("down.svg", transparent)
+		margin: auto
+		margin-top: 5px
+
+/*** Beer introduction ***/
+
+.beer-intro
+	position: relative
+	box-shadow: inset 0px 3px 30px 1px rgba(#000, 0.35)
+	
+	&__advantage_dark-wrap, &__advantage_light-wrap
+		padding:
+			top: 5%
+			bottom: 5%
+			left: 8%
+			right: 2%
+
+	&__advantage_dark-wrap
+		width: calc(85% - 275px)
+
+	&__advantage_light-wrap
+		width: 78%
+		background: $bgColorLight url("../images/bigRotatedLogo.png") center right no-repeat
+		background-size: auto 200%
+
+	&__advantage_light
+		width: calc(105% - 275px)
+
+	&__beer-bottle
+		position: absolute
+		right: 15%
+		bottom: -170px
+		width: 265px
+		z-index: 1
+
+	&__joy-of-beer-img
+		position: absolute
+		top: -15px
+		right: 0
+		width: 25%
+		max-width: 450px
+		min-width: 300px
+
+/*** Inspiration tab ***/
+
+.inspiration-tab
+	@include setCoverBg("inspirationBg.jpg", transparent)
+	@include flex(row, flex-end, center)
+	background-attachment: fixed
+
+	&__header
+		margin:
+			right: 10%
+			left: 2%
+
+/*** Beer description tab ***/
+
+.beer-description
+	width: 50%
+	
+	&_wrap
+		padding: 8%
+		position: relative
+
+	&__image
+		position: absolute
+		top: -8%
+		width: 45%
+		max-width: 550px
+		right: 0
+
+/*** Start journey tab ***/
+
+.start-journey
+	@include flex(column, center, center)
+	text-align: center
+
+	&_wrap
+		padding: 5% 2%
+
+/*** Footer ***/
+
+.page-foter
+	@include flex(column, center, center)
+
+	&__img-decoration
+		width: 100%
