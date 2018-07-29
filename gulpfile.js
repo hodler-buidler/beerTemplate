@@ -19,10 +19,6 @@ let paths = {
 		src: "app/css/**/*.css",
 		dest: "dist/css"
 	},
-	CSSLibs: {
-		src: "app/libs/css/*.css",
-		dest: "dist/libs/css"
-	},
 	sass: {
 		src: "app/sass/**/*.+(sass|scss)",
 		dest: "dist/sass",
@@ -32,9 +28,9 @@ let paths = {
 		src: "app/js/**/*.js",
 		dest: "dist/js"
 	},
-	JSLibs: {
-		src: "app/libs/js/*/dist/*.js",
-		dest: "dist/libs/js"
+	libs: {
+		src: ["app/libs/*/dist/*.js", "app/libs/*/**/*.css"],
+		dest: "dist/libs"
 	},
 	fonts: {
 		src: "app/fonts/**/*.+(ttf|woff|eot)",
@@ -93,12 +89,6 @@ function loadCSS() {
 	.pipe(gulp.dest(paths.css.dest));
 }
 
-// Load css libraries to dist folder
-function loadCSSLibs() {
-	return gulp.src(paths.CSSLibs.src)
-	.pipe(gulp.dest(paths.CSSLibs.dest));
-}
-
 // Load sass to dist folder
 function loadSASS() {
 	return gulp.src(paths.sass.src)
@@ -112,10 +102,10 @@ function loadJS() {
 	.pipe(gulp.dest(paths.js.dest));
 }
 
-// Load js libraries to dist folder
-function loadJSLibs() {
-	return gulp.src(paths.JSLibs.src)
-	.pipe(gulp.dest(paths.JSLibs.dest));
+// Load libraries to dist folder
+function loadLibs() {
+	return gulp.src(paths.libs.src)
+	.pipe(gulp.dest(paths.libs.dest));
 }
 
 // Load fonts to dist folder
@@ -174,10 +164,9 @@ exports.clearCache = clearCache;
 exports.compileSass = compileSass;
 exports.loadHTML = loadHTML;
 exports.loadCSS = loadCSS;
-exports.loadCSSLibs = loadCSSLibs;
 exports.loadSASS = loadSASS;
 exports.loadJS = loadJS;
-exports.loadJSLibs = loadJSLibs;
+exports.loadLibs = loadLibs;
 exports.loadFonts = loadFonts;
 exports.loadImages = loadImages;
 exports.loadOtherFiles = loadOtherFiles;
@@ -191,10 +180,9 @@ exports.watch = watch;
 let loadTask = gulp.parallel(
 	loadHTML, 
 	loadCSS,
-	loadCSSLibs,
 	loadSASS,
 	loadJS,
-	loadJSLibs,
+	loadLibs,
 	loadFonts,
 	loadImages,
 	loadOtherFiles
