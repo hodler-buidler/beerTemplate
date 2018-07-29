@@ -1,2 +1,5 @@
 # Npm packagies
 /node_modules
+# Bower packagies
+/app/libs
+/dist/libs
