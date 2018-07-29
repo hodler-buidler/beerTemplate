@@ -29,7 +29,7 @@ let paths = {
 		dest: "dist/js"
 	},
 	libs: {
-		src: ["app/libs/*/dist/*.js", "app/libs/*/**/*.css"],
+		src: ["app/libs/*/dist/**/*.js", "app/libs/*/**/*.css"],
 		dest: "dist/libs"
 	},
 	fonts: {
