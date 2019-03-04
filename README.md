@@ -1,5 +1,9 @@
 View the project | Смотреть проект - https://nikitosgolubev.github.io/beerTemplate/
 
+View the project | Смотреть проект - https://nikitosgolubev.github.io/beerTemplate/
+
+View the project | Смотреть проект - https://nikitosgolubev.github.io/beerTemplate/
+
 # beerTemplate - ENG
 This template I've done yesterday(27.07.2018) and I'm really proud of this work!
 
